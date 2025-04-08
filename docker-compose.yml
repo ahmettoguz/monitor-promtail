@@ -1,0 +1,17 @@
+####################################### Services
+services:
+  promtail:
+    image: grafana/promtail
+    container_name: monitor-promtail-c
+    volumes:
+      - ../core/core-traefik/logs/traefik:/logs
+      - ./config.yml:/etc/promtail/config.yml
+    command: -config.file=/etc/promtail/config.yml
+    networks:
+      - network-monitor
+    restart: always
+
+####################################### Networks
+networks:
+  network-monitor:
+    external: true
