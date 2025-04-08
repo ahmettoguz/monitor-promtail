@@ -40,8 +40,6 @@ This project simplifies the deployment of Promtail to collect Traefik access log
 
 &nbsp; [![Promtail](https://img.shields.io/badge/Promtail-F2F4F9?style=for-the-badge&logo=grafana&logoColor=orange&labelColor=F2F4F9)](https://grafana.com/docs/loki/latest/send-data/promtail)
 
-- Promtail
-
 <br/>
 
 <h2 id="features">🔥 Features</h2>
@@ -97,11 +95,11 @@ docker logs -f                          monitor-promtail-c
 
 - Refer to [`Node-Exporter`](https://github.com/ahmettoguz/monitor-node-exporter) repository to expose node metrics.
 
+- Refer to [`Prometheus`](https://github.com/ahmettoguz/monitor-prometheus) repository to integrate prometheus to scrap metrics.
+
 - Refer to [`Loki`](https://github.com/ahmettoguz/monitor-loki) repository to scrap traefik access logs from promtail.
 
 - Refer to [`Traefik`](https://github.com/ahmettoguz/core-traefik) repository to expose traefik access logs, metrics and also launch reverse proxy.
-
-- Refer to [`Prometheus`](https://github.com/ahmettoguz/monitor-prometheus) repository to integrate prometheus to scrap metrics.
 
 - Refer to [`Grafana`](https://github.com/ahmettoguz/monitor-grafana) repository to integrate grafana to visualize logs and metrics.
 
