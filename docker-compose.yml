@@ -4,7 +4,7 @@ services:
     image: ahmettoguz/promtail:3.4.3
     container_name: monitor-promtail-c
     volumes:
-      - ../core/core-traefik/logs/traefik:/logs
+      - ../../core/core-traefik/logs/traefik:/logs
       - ./config.yml:/etc/promtail/config.yml
     command: -config.file=/etc/promtail/config.yml
     networks:
