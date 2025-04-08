@@ -1,4 +1,4 @@
-<h1 id="top" align="center">Monitor Promtail</h1>
+<h1 id="top" align="center">Monitor Promtail <br/> 🚢 v1.0.0 🚢</h1>
 
 <br>
 
@@ -10,35 +10,8 @@
 
 ## 🔍 Table of Contents
 
-- [About Project](#intro)
-- [Dashboard](#dashboard)
-- [Technologies](#technologies)
 - [Features](#features)
-- [Releases](#releases)
 - [System Startup](#system-startup)
-- [Contributors](#contributors)
-
-<br/>
-
-<h2 id="intro">📌 About Project</h2>
-
-This project simplifies the deployment of Promtail to collect Traefik access logs and push them to Loki for real-time log visualization in Grafana. It uses Docker Compose for quick deployment with preconfigured settings, making it easy to set up and monitor Traefik logs.
-
-<br/>
-
-<h2 id="dashboard">🔥 Dashboard</h2>
-
-<div align="center">
-    <img width=800 src="assets/dashboard/dashboard.png">
-</div>
-
-<br/>
-
-<h2 id="technologies">☄️ Technologies</h2>
-
-&nbsp; [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com)
-
-&nbsp; [![Promtail](https://img.shields.io/badge/Promtail-F2F4F9?style=for-the-badge&logo=grafana&logoColor=orange&labelColor=F2F4F9)](https://grafana.com/docs/loki/latest/send-data/promtail)
 
 <br/>
 
@@ -50,12 +23,6 @@ This project simplifies the deployment of Promtail to collect Traefik access log
 - **Traefik Integration:** Promtail collects logs directly from Traefik, enabling easy monitoring of your reverse proxy activity.
 - **Loki Integration:** Logs are pushed to Loki, which store logs and serves to Grafana to create visually appealing dashboards.
 - **Grafana Integration:** Promtail integrates smoothly with Grafana for visualizing access logs.
-
-<br/>
-
-<h2 id="releases">🚢 Releases</h2>
-
-&nbsp; [![.](https://img.shields.io/badge/1.0.0-233838?style=flat&label=version&labelColor=111727&color=1181A1)](https://github.com/ahmettoguz/monitor-promtail/tree/v1.0.0)
 
 <br/>
 
@@ -104,9 +71,5 @@ docker logs -f                          monitor-promtail-c
 - Refer to [`Grafana`](https://github.com/ahmettoguz/monitor-grafana) repository to integrate grafana to visualize logs and metrics.
 
 <br/>
-
-<h2 id="contributors">👥 Contributors</h2>
-
-<a href="https://github.com/ahmettoguz" target="_blank"><img width=60 height=60 src="https://avatars.githubusercontent.com/u/101711642?v=4"></a>
 
 ### [🔝](#top)
