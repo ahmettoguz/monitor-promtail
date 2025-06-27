@@ -50,6 +50,8 @@ This project simplifies the deployment of Promtail to collect Traefik access log
 - **Docker Compose Deployment:** Simplifies deployment with Docker Compose configuration, enabling easy setup and service orchestration without complex commands.
 - **Configuration:** Preconfigured configuration to collect and push Traefik logs to Loki.
 - **Persistent Data:** Utilizes a named Docker volume to ensure persistent storage of application data, allowing data to persist across container restarts, rebuilds, and removals.
+- **.env Configuration:** All environment variables are easily configurable using the `.env` file, simplifying configuration management.
+- **Network Compatibility:** Uses shared Docker network to work with other monitoring tools.
 - **Traefik Integration:** Promtail collects logs directly from Traefik, enabling easy monitoring of your reverse proxy activity.
 - **Loki Integration:** Logs are pushed to Loki, which store logs and serves to Grafana to create visually appealing dashboards.
 
