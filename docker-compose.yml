@@ -1,17 +1,23 @@
 ####################################### Services
 services:
-  promtail:
+  service-promtail:
     image: ahmettoguz/promtail:3.4.3
-    container_name: monitor-promtail-c
+    container_name: container-promtail
     volumes:
-      - ../../core/core-traefik/logs/traefik:/logs
+      - volume-promtail:/tmp
+      - ${LOG_DIRECTORY}:/log
       - ./config.yml:/etc/promtail/config.yml
     command: -config.file=/etc/promtail/config.yml
     networks:
       - network-monitor
-    restart: always
+    restart: ${RESTART_POLICY}
 
 ####################################### Networks
 networks:
   network-monitor:
     external: true
+
+####################################### Volumes
+volumes:
+  volume-promtail:
+    name: volume-promtail
