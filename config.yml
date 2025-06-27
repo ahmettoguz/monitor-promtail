@@ -5,13 +5,13 @@ positions:
   filename: /tmp/positions.yaml
 
 clients:
-  - url: http://loki:3100/loki/api/v1/push
+  - url: http://service-loki:3100/loki/api/v1/push
 
 scrape_configs:
-  - job_name: traefik-access-logs
+  - job_name: job_traefik-access-log
     static_configs:
       - targets:
           - localhost
         labels:
-          job: traefik
-          __path__: /logs/access.log
+          job: label-job-traefik-access-log
+          __path__: /log/access.log

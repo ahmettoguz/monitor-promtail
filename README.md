@@ -13,16 +13,18 @@
 - [Features](#features)
 - [System Startup](#system-startup)
 
+&nbsp; [![.Env](https://img.shields.io/badge/.ENV-ECD53F.svg?style=for-the-badge&logo=dotenv&logoColor=black)](https://www.ibm.com/docs/bg/aix/7.2?topic=files-env-file)
+
 <br/>
 
 <h2 id="features">🔥 Features</h2>
 
 - **Docker Containerization:** The application is containerized using Docker to ensure consistent deployment, scalability, and isolation across different environments.
 - **Docker Compose Deployment:** Simplifies deployment with Docker Compose configuration, enabling easy setup and service orchestration without complex commands.
-- **Configuration:** Preconfigured Promtail container to collect and push Traefik logs to Loki.
+- **Configuration:** Preconfigured configuration to collect and push Traefik logs to Loki.
+- **Persistent Data:** Utilizes a named Docker volume to ensure persistent storage of application data, allowing data to persist across container restarts, rebuilds, and removals.
 - **Traefik Integration:** Promtail collects logs directly from Traefik, enabling easy monitoring of your reverse proxy activity.
 - **Loki Integration:** Logs are pushed to Loki, which store logs and serves to Grafana to create visually appealing dashboards.
-- **Grafana Integration:** Promtail integrates smoothly with Grafana for visualizing access logs.
 
 <br/>
 
@@ -42,20 +44,26 @@ git clone https://github.com/ahmettoguz/monitor-promtail
 cd monitor-promtail
 ```
 
+- Create `.env` file based on the `.env.example` file with credentails and configurations.
+
+```
+cp .env.example .env
+```
+
 - Create `network-monitor` network if not exists.
 
 ```
 docker network create network-monitor
 ```
 
-- Run container.
+- Manage container.
 
 ```
-docker stop                             monitor-promtail-c
-docker rm                               monitor-promtail-c
-docker compose -p monitor up --build -d promtail
-docker compose -p monitor up -d         promtail
-docker logs -f                          monitor-promtail-c
+docker stop                     container-promtail
+docker rm                       container-promtail
+docker volume rm                volume-promtail
+docker compose -p monitor up -d service-promtail
+docker logs -f                  container-promtail
 ```
 
 - Refer to [`cAdvisor`](https://github.com/ahmettoguz/monitor-cadvisor) repository to expose contianer metrics.
@@ -66,7 +74,7 @@ docker logs -f                          monitor-promtail-c
 
 - Refer to [`Loki`](https://github.com/ahmettoguz/monitor-loki) repository to scrap traefik access logs from promtail.
 
-- Refer to [`Traefik`](https://github.com/ahmettoguz/core-traefik) repository to expose traefik access logs, metrics and also launch reverse proxy.
+- Refer to [`Traefik`](https://github.com/ahmettoguz/proxy-traefik) repository to expose traefik access logs, metrics and also launch reverse proxy.
 
 - Refer to [`Grafana`](https://github.com/ahmettoguz/monitor-grafana) repository to integrate grafana to visualize logs and metrics.
 
