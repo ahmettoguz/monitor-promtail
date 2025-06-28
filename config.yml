@@ -15,3 +15,12 @@ scrape_configs:
         labels:
           job: label-job-traefik-access-log
           __path__: /log/access.log
+
+    pipeline_stages:
+      - json:
+          expressions:
+            traefik_service_name: ServiceName
+            traefik_request_addr: RequestAddr
+      - labels:
+          traefik_service_name:
+          traefik_request_addr:
